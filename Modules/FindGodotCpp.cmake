@@ -25,7 +25,7 @@
 #
 #  This module defines the following variables::
 # 
-#  GODOTCPP_FOUND           - Godot C++ was found
+#  GODOTCPP_FOUND            - Godot C++ was found
 #  GODOT_CPP_INCLUDE_DIRS    - Include directories for Godot
 #  GODOT_CPP_LIBRARIES       - Libraries of Godot
 #
@@ -49,10 +49,18 @@ if(NOT GODOT_CPP_INCLUDE_DIRS OR NOT GODOT_CPP_LIBRARIES)
     find_path(GODOT_CPP_INCLUDE_DIR_CORE NAMES Godot.hpp PATHS ${INCLUDE_PATHS} PATH_SUFFIXES core)
     # search for gen/GDNative.hpp
     find_path(GODOT_CPP_INCLUDE_DIR_GEN NAMES GDNative.hpp PATHS ${INCLUDE_PATHS} PATH_SUFFIXES gen)
+    # find base include path using core/Godot.hpp
+    find_path(GODOT_CPP_INCLUDE_DIR NAMES core/Godot.hpp PATHS ${INCLUDE_PATHS})
     # search for godot_headers/gdnative_api_struct.gen.h
-    find_path(GODOT_CPP_INCLUDE_DIR NAMES gdnative_api_struct.gen.h PATHS ${INCLUDE_PATHS} PATH_SUFFIXES godot_headers)
+    find_path(GODOT_CPP_INCLUDE_DIR_API NAMES gdnative_api_struct.gen.h 
+        PATHS ${INCLUDE_PATHS} 
+        PATH_SUFFIXES godot_headers)
 
-    set(GODOT_CPP_INCLUDE_DIRS ${GODOT_CPP_INCLUDE_DIR} ${GODOT_CPP_INCLUDE_DIR_CORE} ${GODOT_CPP_INCLUDE_DIR_GEN})
+    set(GODOT_CPP_INCLUDE_DIRS 
+        ${GODOT_CPP_INCLUDE_DIR} 
+        ${GODOT_CPP_INCLUDE_DIR_API} 
+        ${GODOT_CPP_INCLUDE_DIR_CORE} 
+        ${GODOT_CPP_INCLUDE_DIR_GEN})
 
     # Create the correct name (godot.os.build_type.system_bits)
     set(BITS 32)
