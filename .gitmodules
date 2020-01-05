@@ -1,3 +1,3 @@
 [submodule "Toolchains/ios-cmake"]
 	path = Toolchains/ios-cmake
-	url = git@github.com:RGPaul/ios-cmake.git
+	url = https://github.com/RGPaul/ios-cmake.git
