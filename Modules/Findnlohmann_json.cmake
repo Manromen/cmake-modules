@@ -1,7 +1,7 @@
 #  ---------------------------------------------------------------------------------------------------------------------
 #  The MIT License (MIT)
 #
-#  Copyright (c) 2018 Ralph-Gordon Paul. All rights reserved.
+#  Copyright (c) 2018-2021 Ralph-Gordon Paul. All rights reserved.
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 #  documentation files (the "Software"), to deal in the Software without restriction, including without limitation the 
@@ -17,7 +17,7 @@
 #  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #  ---------------------------------------------------------------------------------------------------------------------
 
-# FindNlohmannJson
+# Findnlohmann_json
 # -----------
 #
 #  Try to find the nlohmann json library - https://github.com/nlohmann/json
@@ -61,5 +61,5 @@ endif(NOT NLOHMANN_JSON_INCLUDE_DIR)
 
 # handle the QUIETLY and REQUIRED arguments and set NLOHMANN_JSON_FOUND to TRUE
 # if all listed variables are TRUE
-find_package_handle_standard_args(NlohmannJson DEFAULT_MSG
+find_package_handle_standard_args(nlohmann_json DEFAULT_MSG
                                   NLOHMANN_JSON_INCLUDE_FILE NLOHMANN_JSON_INCLUDE_DIR)
